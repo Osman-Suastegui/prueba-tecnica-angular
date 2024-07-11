@@ -13,9 +13,10 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
 
 @NgModule({
-  declarations: [HomeComponent, UserListComponent, UserFormComponent],
+  declarations: [HomeComponent, UserListComponent, UserFormComponent,FilterPipe],
   imports: [
     CommonModule,
     CoreModule,

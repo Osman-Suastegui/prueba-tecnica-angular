@@ -15,9 +15,9 @@ export class UserListComponent implements OnInit {
   displayedColumns: string[] = ['name', 'lastname', 'actions'];
   dataSource: MatTableDataSource<User> = new MatTableDataSource();
   isDialogOpen = false;  // Variable para rastrear si el diálogo está abierto
-
+  searchTerm:string = ""
   constructor(private userService: UserService, public dialog: MatDialog) { }
-
+  
   ngOnInit(): void {
     this.loadUsers();
   }
@@ -30,7 +30,7 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  deleteUser(user: User) {
+  deleteUser(user: User ) {
     if (confirm(`¿Estás seguro de eliminar a ${user.name} ${user.lastname}?`)) {
       this.userService.removeUser(user.id).subscribe(() => {
         // Recargar la lista de usuarios después de eliminar
@@ -65,8 +65,7 @@ export class UserListComponent implements OnInit {
     });
   }
 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  serachByName(event: Event) {
+    this.searchTerm = (event.target as HTMLInputElement).value;
   }
 }

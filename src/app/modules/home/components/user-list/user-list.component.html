@@ -1,6 +1,6 @@
 <div class="toolbar">
   <div class="search-container">
-    <input (input)="applyFilter($event)" placeholder="Buscar por nombre">
+    <input (input)="serachByName($event)" placeholder="Buscar por nombre">
   </div>
   <div class="add-button-container">
     <button (click)="addUser()">Agregar Usuario</button>
@@ -8,23 +8,16 @@
 </div>
 
 <div class="table-container">
-  <mat-table [dataSource]="dataSource">
-    <!-- Columna para Nombre -->
-    <ng-container matColumnDef="name">
-      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
-    </ng-container>
+  <mat-table [dataSource]="dataSource.data | filter: searchTerm">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+    <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
+  </ng-container>
 
     <!-- Columna para Apellido -->
     <ng-container matColumnDef="lastname">
       <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
       <mat-cell *matCellDef="let user"> {{ user.lastname }} </mat-cell>
-    </ng-container>
-
-    <!-- Columna para Teléfono -->
-    <ng-container matColumnDef="phone">
-      <mat-header-cell *matHeaderCellDef> Teléfono </mat-header-cell>
-      <mat-cell *matCellDef="let user"> {{ user.phone }} </mat-cell>
     </ng-container>
 
     <!-- Columna para Acciones (Editar y Eliminar) -->
