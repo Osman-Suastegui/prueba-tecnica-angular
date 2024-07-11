@@ -1,0 +1,47 @@
+<div class="toolbar">
+  <div class="search-container">
+    <input (input)="applyFilter($event)" placeholder="Buscar por nombre">
+  </div>
+  <div class="add-button-container">
+    <button (click)="addUser()">Agregar Usuario</button>
+  </div>
+</div>
+
+<div class="table-container">
+  <mat-table [dataSource]="dataSource">
+    <!-- Columna para Nombre -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
+    </ng-container>
+
+    <!-- Columna para Apellido -->
+    <ng-container matColumnDef="lastname">
+      <mat-header-cell *matHeaderCellDef> Apellido </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.lastname }} </mat-cell>
+    </ng-container>
+
+    <!-- Columna para Teléfono -->
+    <ng-container matColumnDef="phone">
+      <mat-header-cell *matHeaderCellDef> Teléfono </mat-header-cell>
+      <mat-cell *matCellDef="let user"> {{ user.phone }} </mat-cell>
+    </ng-container>
+
+    <!-- Columna para Acciones (Editar y Eliminar) -->
+    <ng-container matColumnDef="actions" >
+      <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+      <mat-cell *matCellDef="let user" class="actions">
+        <button class="edit-button" (click)="editUser(user)" [disabled]="isDialogOpen">
+          Editar
+        </button>
+        <button class="delete-button" (click)="deleteUser(user)">
+          Eliminar
+        </button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Definir las columnas a mostrar en la tabla -->
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>

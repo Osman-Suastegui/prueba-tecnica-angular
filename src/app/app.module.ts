@@ -7,6 +7,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { firebaseConfig } from './config/firebase-config';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { HomeModule } from './modules/home/home.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,7 +16,8 @@ import { HomeModule } from './modules/home/home.module';
     AppRoutingModule,
     provideFirebaseApp(() => initializeApp(firebaseConfig)),
     provideFirestore(() => getFirestore()),
-    HomeModule
+    HomeModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

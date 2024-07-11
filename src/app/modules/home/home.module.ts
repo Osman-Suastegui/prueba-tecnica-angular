@@ -3,10 +3,31 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from './page/home/home.component';
 
 import { CoreModule } from 'src/app/core/core.module';
+import { UserListComponent } from './components/user-list/user-list.component';
+import { MatTableModule } from '@angular/material/table';
+import { UserFormComponent } from './components/user-form/user-form.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [HomeComponent],
-  imports: [CommonModule,CoreModule],
-  exports: [HomeComponent]
+  declarations: [HomeComponent, UserListComponent, UserFormComponent],
+  imports: [
+    CommonModule,
+    CoreModule,
+    MatTableModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    FormsModule
+  ],
+  exports: [HomeComponent],
 })
 export class HomeModule {}

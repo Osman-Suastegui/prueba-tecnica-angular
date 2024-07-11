@@ -1,0 +1,100 @@
+/* Container for the toolbar */
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+   justify-content: space-between;
+  align-items: center; 
+  margin-bottom: 20px;
+  padding: 0 20px;
+  margin-top: 50px;
+}
+
+/* Styling the search input field */
+.search-container input {
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Styling the Add User button */
+.add-button-container button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-button-container button:hover {
+  background-color: #0056b3;
+}
+
+/* Center the table container */
+.table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+mat-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+/* Styling the table header */
+mat-header-cell {
+  background-color: #f8f8f8;
+  font-weight: bold;
+  padding: 10px;
+  text-align: left;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+mat-cell {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Styling the action buttons */
+.edit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+.actions{
+  display: flex;
+  flex-wrap: wrap;
+}
+.add-button-container{
+  margin-top: 30px;
+}

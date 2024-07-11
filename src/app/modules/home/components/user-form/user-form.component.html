@@ -1,0 +1,21 @@
+<mat-dialog-content class="container">
+  <header>
+    <h1>{{ data ? 'Editar usuario' : 'Crear usuario' }}</h1>
+    <button mat-icon-button class="close-button" (click)="closeDialog()">
+      <mat-icon>X</mat-icon>
+    </button>
+  </header>
+
+  <form>
+    <mat-form-field>
+      <label for="name">Nombre de usuario</label>
+      <input type="text" name="name" id="name" matInput [(ngModel)]="dataUser.name">
+    </mat-form-field>
+    <mat-form-field>
+      <label for="lastname">Apellido de usuario</label>
+      <input type="text" name="lastname" id="lastname" matInput [(ngModel)]="dataUser.lastname">
+    </mat-form-field>
+   
+    <button type="submit" mat-raised-button color="primary" (click)="saveUser()">{{ data ? 'Guardar' : 'Crear' }}</button>
+  </form>
+</mat-dialog-content>
