@@ -1,6 +1,6 @@
 <div class="toolbar">
-  <div class="search-container">
-    <input (input)="serachByName($event)" placeholder="Buscar por nombre">
+  <div class="search-container" [appHighlight]="'lightblue'">  
+    <input  (input)="serachByName($event)" placeholder="Buscar por nombre">
   </div>
   <div class="add-button-container">
     <button (click)="addUser()">Agregar Usuario</button>

@@ -14,9 +14,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 import { FilterPipe } from 'src/app/shared/pipes/filter.pipe';
+import { HighlightDirective } from 'src/app/shared/directives/highlight.directive';
 
 @NgModule({
-  declarations: [HomeComponent, UserListComponent, UserFormComponent,FilterPipe],
+  declarations: [HomeComponent, UserListComponent, UserFormComponent,FilterPipe,HighlightDirective],
   imports: [
     CommonModule,
     CoreModule,
