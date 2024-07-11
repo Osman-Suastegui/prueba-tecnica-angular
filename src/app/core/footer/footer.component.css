@@ -1,0 +1,39 @@
+.footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333; /* Color de fondo del footer */
+    color: white; /* Color del texto */
+  }
+  
+  .footer-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido */
+    display: flex;
+    flex-wrap: wrap; /* Permite que los elementos se envuelvan en pantallas pequeñas */
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Añade espaciado al contenido del footer */
+  }
+  
+  .footer-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; /* Espaciado entre secciones */
+  }
+  
+  .footer-section span {
+    margin-right: 15px;
+  }
+  
+  .footer-section a {
+    color: white;
+    margin-right: 10px;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
