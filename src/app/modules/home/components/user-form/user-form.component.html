@@ -16,6 +16,6 @@
       <input type="text" name="lastname" id="lastname" matInput [(ngModel)]="dataUser.lastname">
     </mat-form-field>
    
-    <button type="submit" mat-raised-button color="primary" (click)="saveUser()">{{ data ? 'Guardar' : 'Crear' }}</button>
+    <button id="button-form-create" type="submit" mat-raised-button color="primary" (click)="saveUser()">{{ data ? 'Guardar' : 'Crear' }}</button>
   </form>
 </mat-dialog-content>

@@ -9,30 +9,34 @@ import { User } from 'src/app/modules/user.model';
   styleUrls: ['./user-form.component.css'],
 })
 export class UserFormComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: User,  public dialogRef: MatDialogRef<UserFormComponent>,private userService:UserService) {
-  }
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: User,
+    public dialogRef: MatDialogRef<UserFormComponent>,
+    private userService: UserService
+  ) {}
 
- dataUser: User  = {} as User;
+  dataUser: User = {} as User;
+
   ngOnInit(): void {
-   
     this.dataUser = { ...this.data };
-
-
   }
-  
-  addUser() {
 
+  addUser() {
     this.dialogRef.close();
   }
+
   closeDialog() {
     this.dialogRef.close();
   }
+
   saveUser() {
     if (this.dataUser.id) {
-      this.userService.updateUser(this.dataUser.id,this.dataUser).subscribe(() => {
-        this.dialogRef.close();
-        alert('Usuario actualizado');
-      })
+      this.userService
+        .updateUser(this.dataUser.id, this.dataUser)
+        .subscribe(() => {
+          this.dialogRef.close();
+          alert('Usuario actualizado');
+        });
     } else {
       this.userService.addUser(this.dataUser).subscribe(() => {
         this.dialogRef.close();
@@ -40,6 +44,5 @@ export class UserFormComponent implements OnInit {
       });
     }
   }
-
+  
 }
-

@@ -11,7 +11,7 @@
   <mat-table [dataSource]="dataSource.data | filter: searchTerm">
   <ng-container matColumnDef="name">
     <mat-header-cell *matHeaderCellDef> Nombre </mat-header-cell>
-    <mat-cell *matCellDef="let user"> {{ user.name }} </mat-cell>
+    <mat-cell id="nameCell" *matCellDef="let user"> {{ user.name }} </mat-cell>
   </ng-container>
 
     <!-- Columna para Apellido -->
@@ -24,10 +24,10 @@
     <ng-container matColumnDef="actions" >
       <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
       <mat-cell *matCellDef="let user" class="actions">
-        <button class="edit-button" (click)="editUser(user)" [disabled]="isDialogOpen">
+        <button class="edit-button {{ user.name }}-edit " (click)="editUser(user)" [disabled]="isDialogOpen">
           Editar
         </button>
-        <button class="delete-button" (click)="deleteUser(user)">
+        <button class="delete-button {{ user.name }}" (click)="deleteUser(user)">
           Eliminar
         </button>
       </mat-cell>

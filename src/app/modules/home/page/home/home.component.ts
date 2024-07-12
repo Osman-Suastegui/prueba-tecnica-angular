@@ -10,11 +10,4 @@ import { MatDialog } from '@angular/material/dialog';
 export class HomeComponent {
   constructor(public dialog: MatDialog) { }
 
-  abrirModal() {
-    this.dialog.open(UserFormComponent, {
-      width: '450px',
-      // disableClose: false, // asegúrate de que no esté establecido en true
-      hasBackdrop: true,
-    })
-  }
 }

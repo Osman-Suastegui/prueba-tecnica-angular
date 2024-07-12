@@ -24,7 +24,6 @@ export class UserListComponent implements OnInit {
 
   loadUsers() {
     this.userService.getUsers().subscribe(users => {
-      console.log(users);
       this.users = users;
       this.dataSource = new MatTableDataSource(users);
     });
@@ -33,7 +32,6 @@ export class UserListComponent implements OnInit {
   deleteUser(user: User ) {
     if (confirm(`¿Estás seguro de eliminar a ${user.name} ${user.lastname}?`)) {
       this.userService.removeUser(user.id as string).subscribe(() => {
-        // Recargar la lista de usuarios después de eliminar
         this.loadUsers();
       });
     }
@@ -42,7 +40,7 @@ export class UserListComponent implements OnInit {
   editUser(user: User) {
     this.isDialogOpen = true;  // Marcar el diálogo como abierto
     const dialogRef = this.dialog.open(UserFormComponent, {
-      width: '450px',
+      width: '400px',
       disableClose: false,
       data: user
     });
@@ -55,13 +53,13 @@ export class UserListComponent implements OnInit {
   addUser() {
     this.isDialogOpen = true;
     const dialogRef = this.dialog.open(UserFormComponent, {
-      width: '450px',
+      width: '400px',
       disableClose: false
     });
 
     dialogRef.afterClosed().subscribe(() => {
       this.isDialogOpen = false;
-      this.loadUsers(); // Recargar la lista de usuarios después de agregar
+      this.loadUsers();
     });
   }
 
