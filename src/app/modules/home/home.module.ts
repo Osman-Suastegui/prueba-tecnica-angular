@@ -29,6 +29,7 @@ import { HighlightDirective } from 'src/app/shared/directives/highlight.directiv
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule
+ 
   ],
   exports: [HomeComponent],
 })

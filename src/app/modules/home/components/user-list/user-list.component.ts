@@ -32,7 +32,7 @@ export class UserListComponent implements OnInit {
 
   deleteUser(user: User ) {
     if (confirm(`¿Estás seguro de eliminar a ${user.name} ${user.lastname}?`)) {
-      this.userService.removeUser(user.id).subscribe(() => {
+      this.userService.removeUser(user.id as string).subscribe(() => {
         // Recargar la lista de usuarios después de eliminar
         this.loadUsers();
       });

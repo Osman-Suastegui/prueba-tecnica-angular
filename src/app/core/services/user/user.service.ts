@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { inject, Inject, Injectable } from '@angular/core';
 import {
   addDoc,
   collection,
@@ -15,7 +15,7 @@ import { User } from 'src/app/modules/user.model';
   providedIn: 'root',
 })
 export class UserService {
-  constructor(private firestore: Firestore) {}
+  firestore = inject(Firestore);
   usersCollection = collection(this.firestore, 'users');
 
   getUsers(): Observable<User[]> {
@@ -30,7 +30,7 @@ export class UserService {
     });
     return from(promise);
   }
-
+ 
   removeUser(id: string): Observable<void> {
     const docRef = doc(this.firestore, 'users/' + id);
     const promise = deleteDoc(docRef);
