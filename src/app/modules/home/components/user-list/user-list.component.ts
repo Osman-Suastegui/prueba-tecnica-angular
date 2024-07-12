@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { User } from 'src/app/modules/user.model';
+import { User } from 'src/app/shared/models/user.model';
 import { UserService } from 'src/app/core/services/user/user.service';
 import { UserFormComponent } from '../user-form/user-form.component';
 import { MatTableDataSource } from '@angular/material/table';

@@ -1,27 +1,66 @@
-# AngularTest
+# Prueba Técnica para Desarrollador Angular 16
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.14.
+Este proyecto es una aplicación de Angular que demuestra operaciones CRUD con usuarios, incluyendo pruebas unitarias y pruebas end-to-end usando Cypress.
 
-## Development server
+## Prerrequisitos
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Antes de comenzar, asegúrate de tener los siguientes requisitos:
 
-## Code scaffolding
+- **Node.js y npm**: Descarga e instala desde [Node.js](https://nodejs.org/).
+- **Git**: Descarga e instala desde [Git](https://git-scm.com/).
+- **Angular CLI**: Instala globalmente ejecutando:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+  ````sh
+  npm install -g @angular/cli
 
-## Build
+<!-- 1.Clonar el Repositorio: -->
+## Configuración del Proyecto
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clona el repositorio:
 
-## Running unit tests
+   ```sh
+    git clone https://github.com/Osman-Suastegui/prueba-tecnica-angular.git
+2. Instalar Dependencias:
+    
+   ```sh
+   npm install
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Servir la Aplicación Angular:
 
-## Running end-to-end tests
+   ```sh
+   ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+4. Ejecutar Pruebas Unitarias:
+ 
+   ```sh
+   ng test
 
-## Further help
+5. Ejecutar Pruebas End-to-End con Cypress:
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```sh
+   npx cypress open
+6. Arquitectura del sistema
+
+        |-- app
+            |-- modules
+                |-- home
+                    |-- [+] components
+                    |-- [+] pages
+                    |-- home-routing.module.ts
+                    |-- home.module.ts
+            |-- core
+                |-- [+] authentication
+                |-- [+] footer
+                |-- [+] guards
+                |-- [+] interceptors
+                |-- [+] mocks
+                |-- [+] services
+                |-- [+] header
+                |-- core.module.ts
+            |
+            |-- shared
+                |-- [+] components
+                |-- [+] directives
+                |-- [+] pipes
+                |-- [+] models
+        |-- assets

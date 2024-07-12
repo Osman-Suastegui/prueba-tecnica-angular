@@ -1,5 +1,5 @@
 import { FilterPipe } from './filter.pipe';
-import { User } from 'src/app/modules/user.model';
+import { User } from 'src/app/shared/models/user.model';
 
 describe('FilterPipe', () => {
   let pipe: FilterPipe;

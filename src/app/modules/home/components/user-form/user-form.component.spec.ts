@@ -6,7 +6,7 @@ import { MAT_DIALOG_DATA, MatDialogModule, MatDialogRef } from '@angular/materia
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { firebaseConfig } from 'src/app/config/firebase-config';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
-import { User } from 'src/app/modules/user.model';
+import { User } from 'src/app/shared/models/user.model';
 
 describe('UserFormComponent', () => {
   let component: UserFormComponent;

@@ -1,7 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { UserService } from 'src/app/core/services/user/user.service';
-import { User } from 'src/app/modules/user.model';
+import { User } from 'src/app/shared/models/user.model';
 
 @Component({
   selector: 'app-user-form',

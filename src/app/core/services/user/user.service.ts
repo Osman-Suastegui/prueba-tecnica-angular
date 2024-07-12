@@ -9,7 +9,7 @@ import {
   setDoc,
 } from '@angular/fire/firestore';
 import { from, Observable } from 'rxjs';
-import { User } from 'src/app/modules/user.model';
+import { User } from 'src/app/shared/models/user.model';
 
 @Injectable({
   providedIn: 'root',

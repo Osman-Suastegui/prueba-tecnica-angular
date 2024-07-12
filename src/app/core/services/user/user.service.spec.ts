@@ -6,7 +6,7 @@ import {
   provideFirestore,
 } from '@angular/fire/firestore';
 import { of } from 'rxjs';
-import { User } from 'src/app/modules/user.model';
+import { User } from 'src/app/shared/models/user.model';
 import { firebaseConfig } from 'src/app/config/firebase-config';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 
